@@ -1,0 +1,867 @@
+<html>
+    <head>
+        <title> Portfolio </title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                display: flex;
+                flex-direction: column;
+            }   
+            header {
+                width: 100%;
+                padding: 20px 50px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: #1b1b1b;
+                border-bottom: 1px solid #333;
+            }       
+            main {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+            }
+            .topnav {
+                overflow: hidden;
+                background-color: none;
+                position: fixed;
+                width: 100%;
+            }
+            .topnav a {
+                float:left;
+                color: #00bcd4;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 20px;
+            }
+            .topnav a:hover {
+                background-color: #008c9e;
+                color: black;
+            }
+            .topnav a.active {
+                background-color: #0ecaa7;
+                color: white;
+            }    
+            .hero {
+                display: flex;
+                align-items: center;
+                background-color: #04495c;
+                padding: 20px;
+                border-radius: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+                width: 90%;
+                height: 75%;
+            }
+            .content {
+                max-width: 50%;
+                padding: 40px;
+                margin-left: 60px;
+                color: white;
+            }
+            .content h1 {
+                font-size: 2em;
+                margin-bottom: 10px;
+                color: white;
+            }
+            .content h2 {
+                font-size: 2.5em;
+                margin-bottom: 10px;
+                color: #00bcd4;
+            }
+            .hero h2 {
+                transition: 0.5s;
+            }
+            main:hover h2 {
+                font-size: 45px;
+                margin-bottom: 20px;
+                transition: 0.5s;
+            }
+            .content h3 {
+                font-size: 1.5em;
+                margin-bottom: 20px;
+            }
+            .content h3 span {
+                color: #00bcd4;
+                transition: 0.5s;
+            }
+            .content p {
+                margin-bottom: 20px;
+            }
+            .btn {
+                padding: 10px 20px;
+                background-color: #00bcd4;
+                color: #fff;
+                text-decoration: none;
+                border-radius: 5px;
+                transition: background-color 0.3s ease;
+            }
+            .btn:hover {
+                background-color: #008c9e;
+            }
+            .image-container {
+                border-radius: 150px;
+                border: 2px solid #03cbe6;
+                width: 300px;
+                height: 300px;
+                margin-top: -30px;
+                margin-left: 100px;
+                margin-right: -50px;
+                box-shadow: 0 0 27px 17px #03cbe6, 
+                            0 0 31px 22px #03cbe6, 
+                            0 0 37px 25px #03cbe6 inset;
+                display: flex;  
+                align-items: center;  
+                justify-content: center; 
+                overflow: hidden;
+            }
+            .image-container img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+            }
+            .image-container:hover img {
+                transform: scale(0.9); 
+                box-shadow: 0 0 20px 8px #0b98ac, 
+                            0 0 24px 10px #0b98ac, 
+                            0 0 30px 13px #0b98ac inset;
+            }
+            .second{
+                color:white;
+                background-color: #1b1b1b;
+                height: 320px;
+                width: 80%;
+                text-align: center;
+                padding: 20px 0;
+                font-size: 17px;
+                margin-bottom: 5%;
+                max-width: 700px;
+                margin-bottom: 150px;
+                outline-width: 10px;
+                line-height: 170%;  
+                box-shadow: 5px 10px 18px #00bcd4;  
+                border-radius: 15px; 
+                padding-top: 30px;  
+                padding-left: 30px;
+                padding-right: 30px;       
+            }
+            .edu {
+                display: flex;
+                justify-content: flex-start;
+                margin-top: 20px;
+                margin-left: 80px;
+                position: relative;
+            }
+            .edu img {
+                width: 70px;
+                height: 70px;
+                border: 2px solid #fff;
+                background-color: #1b1b1b;
+                padding: 5px;
+                border-radius: 50%;
+            }
+            .edu h1 {
+                font-size: 50px;
+                padding-left: 20px;
+                padding-top: 10px;
+                color: #00bcd4;
+            }
+            .timeline {
+                position: relative;
+                margin: 50px auto 0;
+                left: -150px;
+            }
+            .timeline::after {
+                content: '';
+                position: absolute;
+                width: 6px;
+                background-color: #1b1b1b;
+                top: -50px;
+                bottom: 0;
+                left: 0;
+                margin-left: -3px;
+            }
+            .contain {
+                padding: 10px 40px;
+                position: relative;
+                background-color: transparent;
+                width: 100%;
+            }
+            .contain::after {
+                content: '';
+                position: absolute;
+                width: 25px;
+                height: 25px;
+                right: -17px;
+                background-color: #1b1b1b;
+                border: 4px solid #03cbe6;
+                top: 15px;
+                border-radius: 50%;
+                z-index: 1;
+            }
+            .left {
+                left: 0;
+            }
+            .right {
+                left: 0;
+            }
+            .right::after {
+                left: -16px;
+            }
+            .contentc {
+                padding: 10px 10px;
+                background-color: transparent;
+                color: white;
+                position: relative;
+                border-radius: 6px;
+            }
+            .contentc:hover {
+                color: #03cbe6;
+                transition: 0.5s;
+            }
+            .container {
+                text-align: center;
+            }
+            .skills-title {
+                font-size: 2em;
+                margin-bottom: 20px;
+                color:#00bcd4;
+            }
+            .skills-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 20px;
+                padding: 30px;
+            }
+            .skill-card {
+                background-color:#00bcd4;
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s, background-color 0.3s;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .skill-card:hover {
+                transform: translateY(-10px);
+                background-color: rgb(6, 85, 125);
+            }
+            .skill-card img {
+                width: 40px;
+                height: 40px;
+                margin-bottom: 10px;
+            }
+            .skill-card span {
+                margin-top: 10px;
+                font-size: 1em;
+                color: black;
+            }
+            .flip-card {
+                background-color: transparent;
+                width: 300px;
+                height: 300px;
+                perspective: 1000px;
+            }
+            .flip-card-inner {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                transition: transform 0.6s;
+                transform-style: preserve-3d;
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            }
+            .flip-card:hover .flip-card-inner {
+                transform: rotateY(180deg);
+            }
+            .flip-card-front, .flip-card-back {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+            }
+            .flip-card-front {
+                color: black;
+            }
+            .flip-card-back {
+                background-color: rgb(6, 85, 125);
+                color: white;
+                transform: rotateY(180deg);
+            }
+            .acheivements-container {
+                display: flex;
+                gap: 20px; 
+                justify-content: center; 
+                flex-wrap: wrap; 
+            }
+            *, *:before, *:after {
+                box-sizing: inherit;
+            }
+            .row {
+                display: flex;
+                justify-content: center; 
+                flex-wrap: wrap;         
+                gap: 20px;               
+                margin-top: 40px;
+            }
+            .column {
+                float: left;
+                width: 20%;
+                margin-bottom: 16px;
+                padding: 0 8px;
+            }
+            @media screen and (max-width: 650px) {
+            .column {
+                width: 100%;
+                display: block;
+            }
+            }
+            .card {
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                background-color: #1b1b1b;
+                color: #00bcd4;
+            }
+            .container1 {
+                padding: 0 16px;
+            }
+            .container1::after, .row::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+            .title {
+                color: white;
+            }
+            .tag-cloud {
+                display: inline-block;
+                color: white;
+                padding: 8px 20px;
+                border-radius: 25px;
+                background-color: rgb(6, 85, 125);
+                margin: 8px;
+            }
+            .progress-container {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                margin-top: 50px;
+            }
+            .progress-bar {
+                width: 300px;
+                height: 20px;
+                background-color: #505b5f;
+                border-radius: 10px;
+                overflow: hidden;
+                position: relative;
+            }
+            .progress-bar-fill {
+                height: 100%;
+                background-color: #00bcd4;
+                width: 0%;
+                transition: width 1.5s ease-in-out;
+            }
+            .progress-label {
+                position: absolute;
+                left: 10px;
+                top: 0;
+                bottom: 0;
+                color: black;
+                display: flex;
+                align-items: center;
+                font-size: 14px;
+                font-weight: bold;
+            }
+            button {
+                padding: 12px 24px;
+                font-size: 18px;
+                background-color: rgb(6, 85, 125);
+                color: white;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+            .popup {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: #00bcd4;
+                padding: 20px 30px;
+                border-radius: 10px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+                font-size: 20px;
+                text-align: center;
+                display: none;
+                z-index: 1000;
+            }
+            .greeting {
+                font-size: 32px;
+                font-weight: bold;
+                color: #00bcd4;
+                text-align: center;
+                opacity: 1;
+                transition: opacity 0.5s ease;
+            }
+            .greeting.fade-out {
+                opacity: 0;
+            }
+            .wave {
+                font-size: 32px;
+                animation: wave 2s infinite;
+                display: inline-block;
+            }
+            @keyframes wave {
+                0% { transform: rotate(0deg); }
+                25% { transform: rotate(20deg); }
+                50% { transform: rotate(-10deg); }
+                75% { transform: rotate(15deg); }
+                100% { transform: rotate(0deg); }
+            }
+            .open-button {
+                background-color: black;
+                color: #00bcd4;
+                padding: 16px 20px;
+                border: none;
+                cursor: pointer;
+                opacity: 0.8;
+                bottom: 23px;
+                right: 28px;
+                width: 280px;
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+            .form-popup {
+                display: none;
+                position: fixed;
+                bottom: 0;
+                right: 15px;
+                border: 3px solid #f1f1f1;
+                z-index: 9;
+            }
+            .form-container {
+                max-width: 300px;
+                padding: 10px;
+                background-color: rgb(6, 85, 125);
+            }
+            .form-container input[type=text] {
+                width: 90%;
+                padding: 15px;
+                margin: 5px 0 22px 0;
+                border: none;
+                background: #f1f1f1;
+            }
+            .form-container input[type=text]:focus{
+                background-color: #ddd;
+                outline: none;
+            }
+            .form-container .btn {
+                background-color: #04AA6D;
+                color: white;
+                padding: 16px 20px;
+                border: none;
+                cursor: pointer;
+                width: 80%;
+                margin-bottom:10px;
+                opacity: 0.8;
+            }
+            .form-container .cancel {
+                background-color: red;
+            }
+            .form-container .btn:hover, .open-button:hover {
+                opacity: 1;
+            }
+        </style>
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    </head>
+    <body bgcolor="black">
+        <div class = "topnav">
+            <a href = "#top"> Home </a>
+            <a href = "#about"> About </a>
+            <a href = "#education"> Education </a>
+            <a href = "#skills"> Skills </a>
+            <a href = "#projects"> Projects </a>
+            <a href = "#acheivements"> Achievements </a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="open-button" onclick="openForm()">Contact Me</button>
+        </div>
+        <div id="top"><br><br><br><br></div>
+        <center>
+        <div class="greeting" id="greetingText"></div>
+        <script>
+            function getGreeting(name) {
+            const hour = new Date().getHours();
+            let greeting = "Hello";
+            if (hour < 12) {
+                greeting = "Good Morning";
+            } else if (hour < 18) {
+                greeting = "Good Afternoon";
+            } else {
+                greeting = "Good Evening";
+            }
+            return `${greeting} ${name}! Enjoy going through my Portfolio!! <span class="wave">👋</span>`;
+            }
+            const userName = prompt("What's your name?");
+            const greetingElement = document.getElementById("greetingText");
+            if (userName && userName.trim() !== "") {
+            greetingElement.innerHTML = getGreeting(userName);
+            } else {
+            greetingElement.innerHTML = `Hello there <span class="wave">👋</span>`;
+            }
+            setTimeout(() => {
+            greetingElement.classList.add("fade-out");
+            }, 4000);
+        </script>
+        <section class="hero" id="portfolio prjt">
+            <div class="content">
+                <h1>Hello, I'm</h1>
+                <h2>Ponn Oviyaa S</h2>
+                <h3>A passionate <span>Developer</span></h3>
+                <p>Student of VIT Chennai | Computer Science | Cyber Physical Systems </p><br>
+                <a href="https://drive.google.com/drive/folders/1c6SKXnDKROzVWalCM7yb9lgc-rKlDBFm?usp=drive_link" class="btn">Resume</a>
+                <br><br>
+                <table border = "8" bgcolor = "lightcyan" style = "border-collapse: collapse; border-color:#00bcd4;">
+                    <caption style = "color: #00bcd4"> Contact Me </caption>
+                    <tr>
+                        <td><img src = "phone.png" alt = "Phone icon" width="50" height="50"></td>
+                        <td> 7550005303 </td>
+                    </tr>
+                    <tr>
+                        <td><img src = "gmail.png" alt = "Phone icon" width="50" height="50"></td>
+                        <td> ponnoviyaa@gmail.com </td>
+                    </tr>
+                    <tr>
+                        <td><img src = "linkedin.png" alt = "Phone icon" width="50" height="50"></td>
+                        <td><a href = "https://www.linkedin.com/in/ponn-oviyaa-saravanababu-791143289/"> LinkedIn </a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class = "image-container">
+                <img src="img.jpg" alt="Profile Picture">
+            </div>
+        </section>  
+        </center>
+        <div id = "about">
+            <br><br><br>
+            <center><h1 style = "color:#00bcd4";> About Me </h1></center>
+            <br><br>
+            <center>
+                <div class = "second">
+                    I am a passionate and dedicated computer science student with a strong foundation in programming, skilled in Python, C, C++, 
+                    Java, HTML, CSS, and JavaScript. My ability to adapt quickly to new technologies and concepts allows me to stay ahead in the
+                    ever-evolving tech landscape. I am well-organized, punctual, and excel in time management, ensuring that I meet deadlines
+                    without compromising the quality of my work. As a natural leader, I thrive in team settings, taking on responsibilities 
+                    with confidence and guiding projects to successful completion. I pride myself on being hardworking and responsible, 
+                    with a perfectionist mindset that drives me to deliver exceptional results in every task I undertake. Alongside my 
+                    technical skills, I have a creative side, with basic knowledge of Adobe Illustrator, enabling me to integrate design into 
+                    my technical projects. My dedication, quick learning ability, and strong work ethic make me a valuable asset in any 
+                    professional or academic environment.
+                </div>  
+            </center> 
+        </div>
+        <div class="edu" id = "education">
+            <img src="edu.png" alt="Education Icon">
+            <h1>Education</h1>
+        </div>
+        <div class="timeline">
+            <div class="contain right">
+                <div class="contentc">
+                    <h2>Vellore Institute of Technology</h2>
+                    <p>Chennai, India <br> 2023-2027</p>
+                </div>
+            </div>
+            <div class="contain right">
+                <div class="contentc">
+                    <h2>Lalaji Memorial Omega International School</h2>
+                    <p>Chennai, India <br>2021-2023</p>
+                </div>
+            </div>
+            <div class="contain right">
+                <div class="contentc">
+                    <h2>Narayana e-Techno School</h2>
+                    <p>Chennai, India<br>2017-2021 </p>
+                </div>
+            </div>
+            <div class="contain right">
+                <div class="contentc">
+                    <h2>Craig Elementary School</h2>
+                    <p>St. Louis, USA<br>2013-2017 </p>
+                </div>
+            </div>
+            <div class="contain right">
+                <div class="contentc">
+                    <h2>Swamy's School</h2>
+                    <p>Chennai, India<br>2010-2013 </p>
+                </div>
+            </div>  
+        </div>
+        <div class="container" id = "skills">
+            <br><br><br><br>
+            <h1 class="skills-title">Technical Skills</h1>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <img src="python.png" alt="Python">
+                    <span>Python</span>
+                </div>
+                <div class="skill-card">
+                    <img src="c.png" alt="C">
+                    <span>C</span>
+                </div>
+                <div class="skill-card">
+                    <img src="cpp.png" alt="C++">
+                    <span>C++</span>
+                </div>
+                <div class="skill-card">
+                    <img src="java.png" alt="Java">
+                    <span>Java</span>
+                </div>
+                <div class="skill-card">
+                    <img src="html.png" alt="HTML">
+                    <span>HTML</span>
+                </div>
+                <div class="skill-card">
+                    <img src="css.png" alt="CSS">
+                    <span>CSS</span>
+                </div>
+                <div class="skill-card">
+                    <img src="js.png" alt="JavaScript">
+                    <span>JavaScript</span>
+                </div>
+                <div class="skill-card">
+                    <img src="sql.png" alt="MySQL">
+                    <span>MySQL</span>
+                </div>
+                <div class="skill-card">
+                    <img src="adobe.png" alt="Adobe Illustrator">
+                    <span>Adobe Illustrator</span>
+                </div>
+            </div>
+            <h1 class="skills-title">Soft Skills</h1>>
+            <span class="tag-cloud">Leadership</span>
+            <span class="tag-cloud">Time Management</span>
+            <span class="tag-cloud">Creativity</span>
+            <span class="tag-cloud">Team Work</span>
+            <span class="tag-cloud">Design</span>
+            <span class="tag-cloud">Marketing</span>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-bar-fill" id="eng"><span class="progress-label">English</span></div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-bar-fill" id="tam"><span class="progress-label">Tamil</span></div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-bar-fill" id="hin"><span class="progress-label">Hindi</span></div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-bar-fill" id="fre"><span class="progress-label">French</span></div>
+                </div>
+            </div>
+            <script>
+                function updateProgress(skill, progressPercentage) {
+                    const progressBarFill = document.getElementById(skill);
+                    progressBarFill.style.width = `${progressPercentage}%`;
+                }
+                function resetProgress(skill) {
+                    const progressBarFill = document.getElementById(skill);
+                    progressBarFill.style.width = "0%"; // Reset width to 0% on exit
+                }
+                const progressBars = [
+                    { id: 'eng', percentage: 90 },
+                    { id: 'tam', percentage: 70 },
+                    { id: 'hin', percentage: 50 },
+                    { id: 'fre', percentage: 30 }
+                ];
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        const progressBar = progressBars.find(pb => pb.id === entry.target.id);
+                        if (progressBar) {
+                            if (entry.isIntersecting) {
+                                updateProgress(progressBar.id, progressBar.percentage);
+                            } else {
+                                resetProgress(progressBar.id);
+                            }
+                        }
+                    });
+                }, { threshold: 0.5 });
+                progressBars.forEach(pb => {
+                    observer.observe(document.getElementById(pb.id));
+                });
+            </script>
+            </div>
+            <center><div id = "projects"><br><br><br>
+            <h1 style = "color:#00bcd4"> Projects </h1>
+                <div class="row">
+                    <div class="column">
+                            <div class="card">
+                                <img src="tic tac toe.png" style="width:100%">
+                                <div class="container1">
+                                    <h2>Tic Tac Toe</h2>
+                                    <p class="title">C++</p>
+                                    <p>A simple interactive tic tac toe game designed for 2 players.</p>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="column">
+                        <div class="card">
+                            <img src="rock paper scissors.png" style="width:100%">
+                            <div class="container1">
+                                <h2>Rock Paper Scissors</h2>
+                                <p class="title">C++</p>
+                                <p>A fun 1 player game to play against the computer.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="card">
+                            <img src="game.png" style="width:100%">
+                            <div class="container1">
+                                <h2>2D Game</h2>
+                                <p class="title">Unity Software</p>
+                                <p>Fight corona virus!! Kill some germs!! </p>
+                            </div>
+                        </div>
+                    </div>                
+                    <div class="column">
+                        <div class="card">
+                            <img src="library.png" style="width:100%">
+                            <div class="container1">
+                                <h2>Web Development</h2>
+                                <p class="title">HTML, CSS, JS</p>
+                                <p>A website to find all great story books!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div></center><br><br><br><br>
+        <center> <h1 style = "color:#00bcd4"><div class="click-text" onclick= "startConfetti()"> Achievements
+            🎉 <br>
+            <span style="font-size: 12px; color: gray;">Click Here!</span> <br>
+        </div></h1></center><br><br><br><br><br>
+        <div class="acheivements-container" id = "acheivements">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="board.png" style="width:300px; height:300px;">
+                    </div>
+                    <div class="flip-card-back"><br><br>
+                        <h1>School Topper</h1>
+                        <p>Secured 3rd rank in 10th Board Exams</p>
+                        <p>94.4%</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="nptel.png" style="width:300px; height:300px;">
+                    </div>
+                    <div class="flip-card-back"><br><br>
+                        <h1>NPTEL course topper</h1>
+                        <p>Wildlife Ecology - 100%</p>
+                        <p>Introduction To Internet Of Things - 91%</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="codsoft.png" style="width:300px; height:300px;">
+                    </div>
+                    <div class="flip-card-back"><br><br>
+                        <h1>Internship at Codsoft</h1>
+                        <p>Python Programming</p>
+                        <p>Data Handling in C++</p>
+                    </div>
+                </div>
+            </div>
+            <script>
+              function startConfetti() {
+                const duration = 5000; 
+                const end = Date.now() + duration;
+                  const confettiInterval = setInterval(function() {
+                  if (Date.now() > end) {
+                    clearInterval(confettiInterval);
+                    return;
+                  }
+                  confetti({
+                    particleCount: 50,
+                    startVelocity: 30,
+                    spread: 360,
+                    origin: {
+                      x: Math.random(),
+                      y: Math.random() - 0.2
+                    }
+                  });
+                }, 300);
+              }
+            </script>
+        </div> <br><br><br><br> 
+        <div class="form-popup" id="myForm">
+          <form name = "form1" class="form-container" onsubmit="return validate()">
+            <h1><center>Reach Out To Me!</center></h1>
+            <label for="name"><b>Name</b></label>
+            <input type="text" placeholder="Enter Name" name="name">
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email">
+            <label for="phno"><b>Phone Number</b></label>
+            <input type="text" placeholder="Enter Phone Number" name="phno">
+            <label for="msg"><b>Message</b></label>
+            <input type="text" placeholder="Enter Message" name="msg">
+            <center>
+            <button type="submit" class="btn">Submit</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button></center>
+          </form>
+        </div>
+        <script>
+        function validate(){
+                var a = document.form1.name.value;
+                var b = document.form1.email.value;
+                var c = document.form1.phno.value;
+                var loc_at = b.indexOf("@");
+                var loc_dot = b.lastIndexOf(".");
+                if (a.length < 4 || a.length > 30 || a == ''){
+                        alert("Invalid Name!");
+                        return false;
+                }
+                else if (loc_at < 1 || loc_dot < loc_at+2 || loc_dot+2 >= b.length){
+                    alert("Invalid Email!");
+                    return false;
+                }
+                else if (c.length < 10 || c.length > 10 || c == ''){
+                    alert("Invalid Phone number!");
+                    return false;
+                }
+                else
+                    alert("Thanks for submitting! Will reach out soon!!");
+            }
+            function openForm() {
+            document.getElementById("myForm").style.display = "block";
+            }
+            function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+            }
+            </script>
+            <button onclick="showPopup()">Click Me!</button>
+            <div class="popup" id="popupBox">Byee👋, Thanks for visiting!</div>
+            <script>
+                function showPopup() {
+                const popup = document.getElementById("popupBox");
+                popup.style.display = "block";
+                setTimeout(() => {
+                    popup.style.display = "none";
+                }, 4000);
+                }
+        </script>
+    </body>
+</html>
+     
