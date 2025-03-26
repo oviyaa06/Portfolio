@@ -105,13 +105,13 @@
             }
             .image-container {
                 border-radius: 150px;
-                border: 2px solid #03cbe6;
+                border: 2px solid #00bcd4;
                 width: 300px;
                 height: 300px;
                 margin-top: -30px;
                 margin-left: 100px;
                 margin-right: -50px;
-                box-shadow: 0 0 27px 17px #03cbe6, 
+                box-shadow: 0 0 27px 17px #00bcd4, 
                             0 0 31px 22px #03cbe6, 
                             0 0 37px 25px #03cbe6 inset;
                 display: flex;  
@@ -127,7 +127,7 @@
             }
             .image-container:hover img {
                 transform: scale(0.9); 
-                box-shadow: 0 0 20px 8px #0b98ac, 
+                box-shadow: 0 0 20px 8px #00bcd4, 
                             0 0 24px 10px #0b98ac, 
                             0 0 30px 13px #0b98ac inset;
             }
@@ -149,6 +149,10 @@
                 padding-top: 30px;  
                 padding-left: 30px;
                 padding-right: 30px;       
+            }
+            .second:hover{
+                transition: 1s;
+                box-shadow: 12px 20px 25px #00bcd4; 
             }
             .edu {
                 display: flex;
@@ -546,7 +550,7 @@
                 </table>
             </div>
             <div class = "image-container">
-                <img src="img.jpg" alt="Profile Picture">
+                <img src="img.png" alt="Profile Picture">
             </div>
         </section>  
         </center>
@@ -851,7 +855,7 @@
             document.getElementById("myForm").style.display = "none";
             }
             </script>
-            <button onclick="showPopup()">Click Me!!</button>
+            <button onclick="showPopup()">Click Me!</button>
             <div class="popup" id="popupBox">Byee👋, Thanks for visiting!</div>
             <script>
                 function showPopup() {
