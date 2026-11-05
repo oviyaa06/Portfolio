@@ -261,6 +261,12 @@
                 height: 40px;
                 margin-bottom: 10px;
             }
+            .skill-icon {
+                font-size: 40px;
+                line-height: 40px;
+                height: 40px;
+                margin-bottom: 10px;
+            }
             .skill-card span {
                 margin-top: 10px;
                 font-size: 1em;
@@ -299,6 +305,31 @@
                 color: white;
                 transform: rotateY(180deg);
             }
+            .ach-front {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 110px;
+                background-color: #1b1b1b;
+                border: 2px solid #00bcd4;
+                box-sizing: border-box;
+            }
+            .ach-back {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 20px;
+                box-sizing: border-box;
+            }
+            .ach-back h2 {
+                margin: 0 0 12px;
+                color: #00bcd4;
+            }
+            .ach-back p {
+                margin: 0;
+                font-size: 16px;
+                line-height: 150%;
+            }
             .acheivements-container {
                 display: flex;
                 gap: 20px; 
@@ -309,17 +340,17 @@
                 box-sizing: inherit;
             }
             .row {
-                display: flex;
-                justify-content: center; 
-                flex-wrap: wrap;         
-                gap: 20px;               
-                margin-top: 40px;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 20px;
+                max-width: 1100px;
+                padding: 0 20px;
+                margin: 40px auto 0;
             }
             .column {
-                float: left;
-                width: 20%;
+                width: 100%;
                 margin-bottom: 16px;
-                padding: 0 8px;
+                padding: 0;
             }
             @media screen and (max-width: 650px) {
             .column {
@@ -331,9 +362,32 @@
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
                 background-color: #1b1b1b;
                 color: #00bcd4;
+                height: 100%;
+                padding: 10px 0 20px;
+                border-radius: 10px;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+            }
+            .card p {
+                color: #e0e0e0;
+                line-height: 150%;
+            }
+            .card ul {
+                text-align: left;
+                color: #e0e0e0;
+                line-height: 150%;
+                padding-left: 20px;
+            }
+            .card .btn {
+                display: inline-block;
+                margin-top: auto;
             }
             .container1 {
                 padding: 0 16px;
+                display: flex;
+                flex-direction: column;
+                flex: 1;
             }
             .container1::after, .row::after {
                 content: "";
@@ -342,6 +396,14 @@
             }
             .title {
                 color: white;
+            }
+            .card p.title {
+                color: white;
+                font-weight: bold;
+            }
+            .section-sub {
+                color: white;
+                margin-top: -10px;
             }
             .tag-cloud {
                 display: inline-block;
@@ -491,8 +553,8 @@
             <a href = "#education"> Education </a>
             <a href = "#skills"> Skills </a>
             <a href = "#projects"> Projects </a>
+            <a href = "#internship"> Internship </a>
             <a href = "#acheivements"> Achievements </a>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -545,7 +607,7 @@
                     </tr>
                     <tr>
                         <td><img src = "linkedin.png" alt = "Linkedin icon" width="50" height="50"></td>
-                        <td><a href = "https://www.linkedin.com/in/ponn-oviyaa-saravanababu-791143289/"> LinkedIn </a></td>
+                        <td><a href = "https://www.linkedin.com/in/ponn-oviyaa-s-791143289/"> LinkedIn </a></td>
                     </tr>
                 </table>
             </div>
@@ -617,14 +679,6 @@
                     <span>Python</span>
                 </div>
                 <div class="skill-card">
-                    <img src="c.png" alt="C">
-                    <span>C</span>
-                </div>
-                <div class="skill-card">
-                    <img src="cpp.png" alt="C++">
-                    <span>C++</span>
-                </div>
-                <div class="skill-card">
                     <img src="java.png" alt="Java">
                     <span>Java</span>
                 </div>
@@ -637,19 +691,27 @@
                     <span>CSS</span>
                 </div>
                 <div class="skill-card">
-                    <img src="js.png" alt="JavaScript">
-                    <span>JavaScript</span>
+                    <div class="skill-icon">🔌</div>
+                    <span>Arduino (Uno, IDE)</span>
                 </div>
                 <div class="skill-card">
-                    <img src="sql.png" alt="MySQL">
-                    <span>MySQL</span>
+                    <div class="skill-icon">🍓</div>
+                    <span>Raspberry Pi</span>
                 </div>
                 <div class="skill-card">
-                    <img src="adobe.png" alt="Adobe Illustrator">
-                    <span>Adobe Illustrator</span>
+                    <div class="skill-icon">📡</div>
+                    <span>ESP32</span>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🎯</div>
+                    <span>YOLO Object Detection</span>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🗺️</div>
+                    <span>LiDAR SLAM</span>
                 </div>
             </div>
-            <h1 class="skills-title">Soft Skills</h1>>
+            <h1 class="skills-title">Soft Skills</h1>
             <span class="tag-cloud">Leadership</span>
             <span class="tag-cloud">Time Management</span>
             <span class="tag-cloud">Creativity</span>
@@ -702,51 +764,122 @@
                 });
             </script>
             </div>
+
+            <!-- ===================== PROJECTS ===================== -->
             <center><div id = "projects"><br><br><br>
             <h1 style = "color:#00bcd4"> Projects </h1>
                 <div class="row">
-                    <div class="column">
-                            <div class="card">
-                                <img src="tic tac toe.png" style="width:100%">
-                                <div class="container1">
-                                    <h2>Tic Tac Toe</h2>
-                                    <p class="title">C++</p>
-                                    <p>A simple interactive tic tac toe game designed for 2 players.</p>
-                                </div>
-                            </div>
-                    </div>
+
+                    <!-- 1. Smart Walker (add a GitHub link later: <a href="URL" class="btn" target="_blank">GitHub</a>) -->
                     <div class="column">
                         <div class="card">
-                            <img src="rock paper scissors.png" style="width:100%">
                             <div class="container1">
-                                <h2>Rock Paper Scissors</h2>
-                                <p class="title">C++</p>
-                                <p>A fun 1 player game to play against the computer.</p>
+                                <h2>Smart Walker: Elderly Fall Prevention System</h2>
+                                <p class="title">Arduino Uno | HC-SR04 | MPU6050 | HX711</p>
+                                <p>A sensor-based smart walker that monitors obstacles, tilt and load in real time, and alerts the user through a buzzer and LCD to help prevent falls.</p>
                             </div>
                         </div>
                     </div>
+
+                    <!-- 2. Autonomous Rover (add a GitHub link later) -->
                     <div class="column">
                         <div class="card">
-                            <img src="game.png" style="width:100%">
                             <div class="container1">
-                                <h2>2D Game</h2>
-                                <p class="title">Unity Software</p>
-                                <p>Fight corona virus!! Kill some germs!! </p>
-                            </div>
-                        </div>
-                    </div>                
-                    <div class="column">
-                        <div class="card">
-                            <img src="library.png" style="width:100%">
-                            <div class="container1">
-                                <h2>Web Development</h2>
-                                <p class="title">HTML, CSS, JS</p>
-                                <p>A website to find all great story books!</p>
+                                <h2>Autonomous Rover for Environment Mapping &amp; Hazard Detection</h2>
+                                <p class="title">Raspberry Pi | ESP32 | LiDAR SLAM | YOLO</p>
+                                <p>A rover that maps its surroundings with LiDAR SLAM, detects fire, smoke and humans with YOLOv8-Tiny and YOLOv9-Nano, and senses gas with an MQ-2 sensor. Reinforcement Learning for navigation is in progress.</p>
                             </div>
                         </div>
                     </div>
+
+                    <!-- 3. Online Payments Fraud Detection -->
+                    <div class="column">
+                        <div class="card">
+                            <div class="container1">
+                                <h2>Online Payments Fraud Detection</h2>
+                                <p class="title">Python | Machine Learning | XGBoost</p>
+                                <p>Compared several models on a Kaggle dataset and chose XGBoost for the best accuracy. Built FraudGuard, a website that flags fraudulent transactions.</p>
+                                <a href="https://github.com/oviyaa06/Online_Payments_Fraud_Detection" class="btn" target="_blank">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Coronary Artery Segmentation -->
+                    <div class="column">
+                        <div class="card">
+                            <div class="container1">
+                                <h2>Coronary Artery Segmentation from X-Ray Angiograms</h2>
+                                <p class="title">CLAHE | Frangi Filter | Mini U-Net | Paper Submitted</p>
+                                <p>A tri-stage framework that segments vessels in coronary angiograms to detect arterial blockages, evaluated with DSC and AUC.</p>
+                                <a href="https://github.com/oviyaa06/Segementation_Of_Coronary_Arteries" class="btn" target="_blank">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. Shopinista (add a GitHub link later) -->
+                    <div class="column">
+                        <div class="card">
+                            <div class="container1">
+                                <h2>Shopinista (Online Shopping Website)</h2>
+                                <p class="title">HTML | CSS | JavaScript</p>
+                                <p>A full e-commerce website where users browse and buy across Books, Fashion, Grocery, Sports and Electronics, built as a set of connected pages.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. Dental Malocclusion Detection (add a GitHub link later) -->
+                    <div class="column">
+                        <div class="card">
+                            <div class="container1">
+                                <h2>AI-Based Dental Malocclusion Detection and Teeth Alignment Analysis</h2>
+                                <p class="title">Vision Transformer (ViT) | Deep Learning</p>
+                                <p>A ViT-based system that detects overbite, underbite, crossbite and crowding from dental images, evaluated with Accuracy, Precision, Recall, F1-Score and a Confusion Matrix.</p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div></center><br><br><br><br>
+
+            <!-- ===================== INTERNSHIP ===================== -->
+            <center><div id = "internship"><br><br><br>
+            <h1 style = "color:#00bcd4"> Internship </h1>
+            <p class="section-sub">Software Development Intern at Larsen &amp; Toubro (L&amp;T), Power Transmission &amp; Distribution IC, Chennai<br>May 18, 2026 &ndash; June 18, 2026</p>
+                <div class="row">
+
+                    <div class="column">
+                        <div class="card">
+                            <div class="container1">
+                                <h2>NGrid Diagnostic Utility</h2>
+                                <p class="title">Python | PyQt5 | gRPC | Psutil</p>
+                                <ul>
+                                    <li>Built a distributed system monitoring tool for real-time performance tracking.</li>
+                                    <li>Monitored CPU, memory, disk I/O and process-level metrics across multiple machines.</li>
+                                    <li>Designed an interactive dashboard with live visualization and diagnostics for industrial applications.</li>
+                                </ul>
+                                <a href="https://github.com/oviyaa06/NGrid-Diagnostic-Utility" class="btn" target="_blank">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="card">
+                            <div class="container1">
+                                <h2>RTE Log Analyzer</h2>
+                                <p class="title">Python | DuckDB | PyArrow | Parquet</p>
+                                <ul>
+                                    <li>Built a scalable log analytics platform to process and visualize large operational logs.</li>
+                                    <li>Used Parquet-based processing, parameter extraction and time-series analysis.</li>
+                                    <li>Cut memory use with a streaming architecture and added interactive graphs and data export.</li>
+                                </ul>
+                                <a href="https://github.com/oviyaa06/RTE-Log-Analyzer" class="btn" target="_blank">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div></center><br><br><br><br>
+
         <center> <h1 style = "color:#00bcd4"><div class="click-text" onclick= "startConfetti()"> Achievements
             🎉 <br>
             <span style="font-size: 12px; color: gray;">Click Here!</span> <br>
@@ -754,37 +887,28 @@
         <div class="acheivements-container" id = "acheivements">
             <div class="flip-card">
                 <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="board.png" style="width:300px; height:300px;">
-                    </div>
-                    <div class="flip-card-back"><br><br>
-                        <h1>School Topper</h1>
-                        <p>Secured 3rd rank in 10th Board Exams</p>
-                        <p>94.4%</p>
+                    <div class="flip-card-front ach-front">🏅</div>
+                    <div class="flip-card-back ach-back">
+                        <h2>Branch Rank 5</h2>
+                        <p>Ranked 5th in Computer Science – Cyber Physical Systems branch at VIT Chennai.</p>
                     </div>
                 </div>
             </div>
             <div class="flip-card">
                 <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="nptel.png" style="width:300px; height:300px;">
-                    </div>
-                    <div class="flip-card-back"><br><br>
-                        <h1>NPTEL course topper</h1>
-                        <p>Wildlife Ecology - 100%</p>
-                        <p>Introduction To Internet Of Things - 91%</p>
+                    <div class="flip-card-front ach-front">🥉</div>
+                    <div class="flip-card-back ach-back">
+                        <h2>3rd Rank in Class X</h2>
+                        <p>Secured 3rd Rank in Class X at Narayana E-Techno School.</p>
                     </div>
                 </div>
             </div>
             <div class="flip-card">
                 <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="codsoft.png" style="width:300px; height:300px;">
-                    </div>
-                    <div class="flip-card-back"><br><br>
-                        <h1>Internship at Codsoft</h1>
-                        <p>Python Programming</p>
-                        <p>Data Handling in C++</p>
+                    <div class="flip-card-front ach-front">💼</div>
+                    <div class="flip-card-back ach-back">
+                        <h2>L&amp;T Internship</h2>
+                        <p>Successfully completed an internship at Larsen &amp; Toubro (L&amp;T), contributing to the development of NGrid Diagnostic Utility and RTE Log Analyzer tools.</p>
                     </div>
                 </div>
             </div>
